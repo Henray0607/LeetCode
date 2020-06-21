@@ -2,18 +2,20 @@ public class Solution028 {
     public static int strStr(String haystack, String needle) {
         if (needle == null || needle.length() == 0)
             return 0;
+        int len1 = haystack.length();
+        int len2 = needle.length();
         int count = 0;
-        for (int i = 0; i < haystack.length(); i++) {
-            for (int j = 0; j < needle.length(); j++) {
-                if (haystack.charAt(i++) == needle.charAt(j))
+        for (int i = 0; i < len1 - len2 + 1; i++) {
+            for (int j = 0; j < len2; j++) {
+                if (haystack.charAt(i + j) == needle.charAt(j))
                     count++;
                 else {
                     count = 0;
                     break;
                 }
-                if (count == needle.length())
-                    return i;
             }
+            if (count == len2)
+                return i;
         }
         return -1;
     }
