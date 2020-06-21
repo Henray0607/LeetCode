@@ -7,9 +7,9 @@ public class Solution028 {
         int count = 0;
         for (int i = 0; i < len1 - len2 + 1; i++) {
             for (int j = 0; j < len2; j++) {
-                if (haystack.charAt(i + j) == needle.charAt(j))
+                if (haystack.charAt(i + j) == needle.charAt(j)) {
                     count++;
-                else {
+                } else {
                     count = 0;
                     break;
                 }
