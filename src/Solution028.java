@@ -13,9 +13,9 @@ public class Solution028 {
                     count = 0;
                     break;
                 }
-                if (count == len2)
-                    return i;
             }
+            if (count == len2)
+                return i;
         }
         return -1;
     }
